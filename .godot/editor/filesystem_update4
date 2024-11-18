@@ -1,0 +1,9 @@
+res://Interfaces/level1.tscn
+res://scripts/level_1.gd
+res://scripts/fundo1.gdshader
+res://themes/button_theme.tres
+res://scripts/floor_level1.gdshader
+res://Interfaces/aros.tscn
+res://Interfaces/selecao.tscn
+res://Interfaces/fundo1.tscn
+res://Interfaces/entrada.tscn

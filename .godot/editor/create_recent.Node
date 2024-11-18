@@ -1,0 +1,15 @@
+SubViewport
+SubViewportContainer
+Button
+Label
+ColorRect
+CanvasLayer
+Timer
+CollisionShape2D
+Sprite2D
+StaticBody2D
+Area2D
+VBoxContainer
+CenterContainer
+Node2D
+BackBufferCopy

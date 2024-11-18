@@ -1,0 +1,211 @@
+[gd_scene load_steps=15 format=3 uid="uid://dh6mhbpj88qvi"]
+
+[ext_resource type="Script" path="res://scripts/level_1.gd" id="1_5t4rq"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_xm3en"]
+[ext_resource type="PackedScene" uid="uid://ds0rjtvhdc1ni" path="res://Interfaces/fundo1.tscn" id="2_3q3qw"]
+[ext_resource type="Texture2D" uid="uid://d3lqhl3cowwe5" path="res://actors/bruxo2.png" id="2_i5sl7"]
+[ext_resource type="Texture2D" uid="uid://c2mtfobjstfq8" path="res://backgrounds/componentes/pause.png" id="6_inh5p"]
+[ext_resource type="FontFile" uid="uid://ggofcb8vqmev" path="res://assets/harry_p/HARRYP__.TTF" id="7_m0j1b"]
+[ext_resource type="Texture2D" uid="uid://c8fwmkmgh3bdt" path="res://backgrounds/componentes/play.png" id="8_6omjf"]
+[ext_resource type="Texture2D" uid="uid://c7ag1k6di8f6a" path="res://assets/reestart.png" id="9_cgvrk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iynk2"]
+atlas = ExtResource("2_i5sl7")
+region = Rect2(1, 0, 158, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1iva"]
+atlas = ExtResource("2_i5sl7")
+region = Rect2(189, 0, 158, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmrca"]
+atlas = ExtResource("2_i5sl7")
+region = Rect2(377, 0, 158, 181)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a3yvw"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_iynk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1iva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmrca")
+}],
+"loop": true,
+"name": &"padrão",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3a1l5"]
+radius = 92.0
+height = 184.0
+
+[sub_resource type="GDScript" id="GDScript_aumwu"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="level1" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_5t4rq")
+
+[node name="Canvas_pause" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Canvas_pause"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="continuar" type="Button" parent="Canvas_pause"]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -98.0
+offset_right = 404.0
+offset_bottom = 410.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "
+"
+icon = ExtResource("8_6omjf")
+flat = true
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Fundo1" parent="." instance=ExtResource("2_3q3qw")]
+process_mode = 1
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+texture_filter = 1
+script = ExtResource("1_xm3en")
+
+[node name="anim" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(189, 626)
+sprite_frames = SubResource("SpriteFrames_a3yvw")
+animation = &"padrão"
+autoplay = "padrão"
+frame_progress = 0.141835
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+visible = false
+texture_filter = 1
+position = Vector2(187, 628)
+shape = SubResource("CapsuleShape2D_3a1l5")
+
+[node name="pause" type="Button" parent="."]
+visible = false
+offset_left = 1765.0
+offset_right = 2273.0
+offset_bottom = 508.0
+scale = Vector2(0.3, 0.3)
+icon = ExtResource("6_inh5p")
+flat = true
+script = SubResource("GDScript_aumwu")
+
+[node name="label_start" type="Label" parent="."]
+offset_left = 491.0
+offset_top = 97.0
+offset_right = 1463.0
+offset_bottom = 419.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.755198, 0, 0.153378, 1)
+theme_override_constants/line_spacing = 20
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("7_m0j1b")
+theme_override_font_sizes/font_size = 150
+text = "Aperte qualquer tecla 
+para iniciar"
+horizontal_alignment = 1
+
+[node name="score" type="Label" parent="."]
+visible = false
+offset_left = 925.0
+offset_top = 131.0
+offset_right = 974.0
+offset_bottom = 232.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.756863, 0, 0.152941, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = ExtResource("7_m0j1b")
+theme_override_font_sizes/font_size = 100
+text = "0"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="Canvas_game_over" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Canvas_game_over"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7)
+metadata/_edit_use_anchors_ = true
+
+[node name="looser" type="Label" parent="Canvas_game_over"]
+offset_left = 295.0
+offset_top = 174.0
+offset_right = 1660.0
+offset_bottom = 308.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.756863, 0, 0.152941, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_fonts/font = ExtResource("7_m0j1b")
+theme_override_font_sizes/font_size = 100
+text = "Você Perdeu! O seu score foi de: "
+uppercase = true
+
+[node name="score" type="Label" parent="Canvas_game_over"]
+offset_left = 927.0
+offset_top = 312.0
+offset_right = 976.0
+offset_bottom = 413.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.756863, 0, 0.152941, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = ExtResource("7_m0j1b")
+theme_override_font_sizes/font_size = 100
+text = "0"
+
+[node name="restart" type="Button" parent="Canvas_game_over"]
+process_mode = 3
+z_index = 10
+offset_left = 756.0
+offset_top = 305.0
+offset_right = 1264.0
+offset_bottom = 813.0
+scale = Vector2(0.8, 0.8)
+icon = ExtResource("9_cgvrk")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Canvas_pause/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="Canvas_game_over/restart" to="." method="_on_restart_pressed"]

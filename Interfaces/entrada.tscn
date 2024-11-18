@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=3 uid="uid://dultr1s5yvyx4"]
+
+[ext_resource type="Texture2D" uid="uid://brl8l3mv7ynvk" path="res://backgrounds/fundo menu de entrada.png" id="1_jnknw"]
+[ext_resource type="Script" path="res://scripts/entrada.gd" id="1_r3fna"]
+[ext_resource type="Texture2D" uid="uid://beagrhinxl8ym" path="res://backgrounds/componentes/blur.png" id="2_bam4o"]
+[ext_resource type="Texture2D" uid="uid://c4y2wbotaxh85" path="res://backgrounds/componentes/harry porker.png" id="3_yx3ac"]
+[ext_resource type="Texture2D" uid="uid://c4qnf7xlkwp3k" path="res://backgrounds/componentes/Rectangle 5.png" id="4_e53tk"]
+[ext_resource type="Theme" uid="uid://gd8xl8rbided" path="res://themes/button_theme.tres" id="4_p1rfh"]
+[ext_resource type="Texture2D" uid="uid://ddhrw0rypdj46" path="res://backgrounds/componentes/Inicie sua jornada.png" id="5_ca3mm"]
+
+[node name="entrada" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_r3fna")
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jnknw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -523.269
+offset_top = -270.0
+offset_right = 523.269
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="blur" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_bam4o")
+expand_mode = 3
+
+[node name="porker" type="TextureRect" parent="MarginContainer/blur"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.177
+anchor_top = -0.046
+anchor_right = 0.823
+anchor_bottom = 0.243
+offset_left = -0.141998
+offset_top = -0.159998
+offset_right = 0.141968
+offset_bottom = -0.220001
+grow_horizontal = 2
+texture = ExtResource("3_yx3ac")
+
+[node name="iniciar" type="Button" parent="MarginContainer/blur"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22
+anchor_top = 0.565
+anchor_right = 0.78
+anchor_bottom = 0.854
+offset_left = -0.12001
+offset_top = -0.100006
+offset_right = 0.119995
+offset_bottom = -0.160004
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_p1rfh")
+theme_type_variation = &"FlatButton"
+icon = ExtResource("4_e53tk")
+icon_alignment = 1
+
+[node name="texto" type="TextureRect" parent="MarginContainer/blur/iniciar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 63.0
+offset_top = 33.0
+offset_right = -63.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_ca3mm")
+
+[connection signal="pressed" from="MarginContainer/blur/iniciar" to="." method="_on_iniciar_pressed"]

@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://ds0rjtvhdc1ni"]
+
+[ext_resource type="Shader" path="res://scripts/fundo1.gdshader" id="1_87o2h"]
+[ext_resource type="Texture2D" uid="uid://d2n1llfx87s74" path="res://backgrounds/fundo_level_resized_1920x1080.png" id="1_nl2iv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rdoeh"]
+shader = ExtResource("1_87o2h")
+shader_parameter/speed = 0.0
+shader_parameter/offset = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w78s2"]
+size = Vector2(2273, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awgef"]
+size = Vector2(55.5, 1396)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olcpm"]
+size = Vector2(78, 1392)
+
+[node name="Fundo1" type="StaticBody2D"]
+
+[node name="fundo1_sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture_repeat = 2
+material = SubResource("ShaderMaterial_rdoeh")
+position = Vector2(960, 540)
+texture = ExtResource("1_nl2iv")
+
+[node name="cima" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(967, -3)
+shape = SubResource("RectangleShape2D_w78s2")
+
+[node name="baixo" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(996.5, 1081.5)
+shape = SubResource("RectangleShape2D_w78s2")
+
+[node name="esquerda" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(2, 513)
+shape = SubResource("RectangleShape2D_awgef")
+
+[node name="direita" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1621, 520)
+shape = SubResource("RectangleShape2D_olcpm")

@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://chy3cjj6pt60b"]
+
+[ext_resource type="Script" path="res://scripts/aros.gd" id="1_y6y8k"]
+[ext_resource type="Texture2D" uid="uid://beyggnv5v4wit" path="res://assets/madeira.png" id="2_mvvdt"]
+[ext_resource type="Texture2D" uid="uid://bx8roe7joxuep" path="res://assets/aro01.png" id="3_m2qdm"]
+[ext_resource type="Texture2D" uid="uid://ccwp845yxcui7" path="res://assets/aro02.png" id="4_j4hnh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8icsf"]
+size = Vector2(51, 2580)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8djp3"]
+size = Vector2(112, 2692)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpjpt"]
+size = Vector2(32, 386)
+
+[node name="Aros" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_y6y8k")
+
+[node name="up" type="StaticBody2D" parent="."]
+
+[node name="colision_up" type="CollisionShape2D" parent="up"]
+position = Vector2(47.5, -1662)
+shape = SubResource("RectangleShape2D_8icsf")
+
+[node name="down" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="down"]
+position = Vector2(0, 1721.13)
+scale = Vector2(1, 3.05894)
+texture = ExtResource("2_mvvdt")
+
+[node name="colision_down" type="CollisionShape2D" parent="down"]
+position = Vector2(0, 1634)
+shape = SubResource("RectangleShape2D_8djp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-265, 0)
+texture = ExtResource("3_m2qdm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(248, 0)
+texture = ExtResource("4_j4hnh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(38, -103)
+shape = SubResource("RectangleShape2D_qpjpt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

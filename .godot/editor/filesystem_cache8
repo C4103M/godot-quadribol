@@ -1,0 +1,58 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1731897824
+export_presets.cfg::TextFile::-1::1731896942::0::1::::<><>::
+::res://actors/::1731897501
+bruxo2.png::CompressedTexture2D::9148242421802310222::1731702183::1731702190::1::::<><>::
+bruxo.png::CompressedTexture2D::2739870695773144753::1731699518::1731699533::1::::<><>::
+::res://assets/::1731897501
+aro01.png::CompressedTexture2D::4069946003199213599::1731863817::1731863843::1::::<><>::
+aro02.png::CompressedTexture2D::4959606621984515072::1731863824::1731863843::1::::<><>::
+madeira.png::CompressedTexture2D::2717096857699429299::1731873853::1731873857::1::::<><>::
+reestart.png::CompressedTexture2D::7019295669672103642::1731884732::1731884735::1::::<><>::
+::res://assets/harry_p/::1731897501
+harryp-readme.txt::TextFile::-1::1731865157::0::1::::<><>::
+HARRYP__.TTF::FontFile::434378403340387581::1731865157::1731865166::1::::<><>::
+::res://backgrounds/::1731897502
+fundo level 1.png::CompressedTexture2D::8469414711601841955::1731701068::1731701069::1::::<><>::
+fundo menu de entrada.png::CompressedTexture2D::3604363975517879016::1731676876::1731676885::1::::<><>::
+fundo_level_resized_1920x1080.png::CompressedTexture2D::9082796612225103701::1731773219::1731773293::1::::<><>::
+::res://backgrounds/componentes/::1731897502
+aut.png::CompressedTexture2D::8599517034434595607::1731676876::1731676885::1::::<><>::
+BCC.png::CompressedTexture2D::6381614711012870296::1731676876::1731676885::1::::<><>::
+blur.png::CompressedTexture2D::2667571099341966504::1731676876::1731676885::1::::<><>::
+cadeado.png::CompressedTexture2D::9107951744250276959::1731676876::1731676885::1::::<><>::
+chapeu.png::CompressedTexture2D::1620225625677478290::1731676876::1731676885::1::::<><>::
+Design sem nome.png::CompressedTexture2D::7402925416525401834::1731676876::1731676885::1::::<><>::
+harry porker.png::CompressedTexture2D::6859541620271976372::1731676876::1731676885::1::::<><>::
+Inicie sua jornada.png::CompressedTexture2D::7385352043070809573::1731676876::1731676885::1::::<><>::
+label aut.png::CompressedTexture2D::3994303941250656311::1731676876::1731676885::1::::<><>::
+label bcc.png::CompressedTexture2D::2267523714970112069::1731676876::1731676885::1::::<><>::
+label le.png::CompressedTexture2D::6184468109430146324::1731676876::1731676885::1::::<><>::
+label mat.png::CompressedTexture2D::8247306882211683307::1731676876::1731676885::1::::<><>::
+le.png::CompressedTexture2D::5251731788091362166::1731676876::1731676885::1::::<><>::
+mat.png::CompressedTexture2D::1996692016202000889::1731676876::1731676885::1::::<><>::
+nivel1.png::CompressedTexture2D::7415114215216318141::1731676876::1731676885::1::::<><>::
+nivel.png::CompressedTexture2D::8628405792803740579::1731676876::1731676885::1::::<><>::
+pause.png::CompressedTexture2D::6693875967799313517::1731854555::1731854609::1::::<><>::
+play.png::CompressedTexture2D::7100752843633513741::1731844991::1731854609::1::::<><>::
+Rectangle 5.png::CompressedTexture2D::6842147843621328366::1731676876::1731676885::1::::<><>::
+texto2.png::CompressedTexture2D::5295211129067534311::1731676876::1731676885::1::::<><>::
+texto.png::CompressedTexture2D::1819160690967080922::1731676876::1731676885::1::::<><>::
+::res://Interfaces/::1731897502
+aros.tscn::PackedScene::5315412474377851895::1731896493::0::1::::<><>::res://scripts/aros.gd<>uid://beyggnv5v4wit::::res://assets/madeira.png<>uid://bx8roe7joxuep::::res://assets/aro01.png<>uid://ccwp845yxcui7::::res://assets/aro02.png
+entrada.tscn::PackedScene::8586932455303126387::1731896493::0::1::::<><>::uid://brl8l3mv7ynvk::::res://backgrounds/fundo menu de entrada.png<>res://scripts/entrada.gd<>uid://beagrhinxl8ym::::res://backgrounds/componentes/blur.png<>uid://c4y2wbotaxh85::::res://backgrounds/componentes/harry porker.png<>uid://c4qnf7xlkwp3k::::res://backgrounds/componentes/Rectangle 5.png<>uid://gd8xl8rbided::::res://themes/button_theme.tres<>uid://ddhrw0rypdj46::::res://backgrounds/componentes/Inicie sua jornada.png
+fundo1.tscn::PackedScene::8475319972144265994::1731896493::0::1::::<><>::res://scripts/fundo1.gdshader<>uid://d2n1llfx87s74::::res://backgrounds/fundo_level_resized_1920x1080.png
+level1.tscn::PackedScene::7715320847541665290::1731896493::0::1::::<><>::res://scripts/level_1.gd<>res://scripts/player.gd<>uid://ds0rjtvhdc1ni::::res://Interfaces/fundo1.tscn<>uid://d3lqhl3cowwe5::::res://actors/bruxo2.png<>uid://c2mtfobjstfq8::::res://backgrounds/componentes/pause.png<>uid://ggofcb8vqmev::::res://assets/harry_p/HARRYP__.TTF<>uid://c8fwmkmgh3bdt::::res://backgrounds/componentes/play.png<>uid://c7ag1k6di8f6a::::res://assets/reestart.png
+selecao.tscn::PackedScene::2192610336073158246::1731896493::0::1::::<><>::res://scripts/selecao.gd<>uid://brl8l3mv7ynvk::::res://backgrounds/fundo menu de entrada.png<>uid://beagrhinxl8ym::::res://backgrounds/componentes/blur.png<>uid://c4y2wbotaxh85::::res://backgrounds/componentes/harry porker.png<>uid://chpbma3c4lcwl::::res://backgrounds/componentes/texto2.png<>uid://xc345rpwumys::::res://backgrounds/componentes/chapeu.png<>uid://cw6ki51xssc85::::res://backgrounds/componentes/BCC.png<>uid://3phhxakvaxw8::::res://backgrounds/componentes/mat.png<>uid://7kn1wv8iioor::::res://backgrounds/componentes/label bcc.png<>uid://cg28ixc3ep1kc::::res://backgrounds/componentes/le.png<>uid://dprb667kuj0q6::::res://backgrounds/componentes/label mat.png<>uid://durw13i3gudh4::::res://backgrounds/componentes/aut.png<>uid://cud2jy32we8i7::::res://backgrounds/componentes/label le.png<>uid://bw54uqkjaebox::::res://backgrounds/componentes/label aut.png
+::res://scripts/::1731897502
+aros.gd::GDScript::-1::1731894291::0::1::::<>Area2D<>::
+color_rect.gd::GDScript::-1::1731849524::0::1::::<>ColorRect<>::
+contador.gd::GDScript::-1::1731806192::0::1::::<>RefCounted<>::
+entrada.gd::GDScript::-1::1731894741::0::1::::<>Control<>::
+floor_level1.gdshader::Shader::-1::1731897483::0::1::::<><>::
+fundo1.gdshader::Shader::-1::1731897483::0::1::::<><>::
+level_1.gd::GDScript::-1::1731896493::0::1::::<>Node2D<>::
+player.gd::GDScript::-1::1731889977::0::1::::<>CharacterBody2D<>::
+selecao.gd::GDScript::-1::1731676876::0::1::::<>Control<>::
+::res://themes/::1731897502
+button_theme.tres::Theme::429371558620933447::1731894712::0::1::::<><>::
