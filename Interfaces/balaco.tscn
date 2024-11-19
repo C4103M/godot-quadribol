@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnhupgs6wxwr3"]
+
+[ext_resource type="Script" path="res://scripts/balaco.gd" id="1_fapw5"]
+[ext_resource type="Texture2D" uid="uid://dewaw1q3xoqo7" path="res://assets/balaco.png" id="1_gmatm"]
+
+[node name="balaco" type="Area2D"]
+position = Vector2(-2, 3)
+script = ExtResource("1_fapw5")
+
+[node name="balaco" type="StaticBody2D" parent="."]
+
+[node name="balaco" type="CollisionPolygon2D" parent="balaco"]
+polygon = PackedVector2Array(-10, -26, 11, -26, 26, -20, 38, -9, 41, -5, 41, -2, 40, 0, 38, 3, 27, 12, 15, 18, 9, 19, -9, 19, -15, 18, -29, 10, -38, 3, -41, -1, -41, -4, -38, -9, -28, -18, -19, -24)
+
+[node name="Sprite2D" type="Sprite2D" parent="balaco/balaco"]
+position = Vector2(0, 5.96046e-08)
+scale = Vector2(0.208, 0.186)
+texture = ExtResource("1_gmatm")

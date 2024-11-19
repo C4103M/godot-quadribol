@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dultr1s5yvyx4"]
+[gd_scene load_steps=9 format=3 uid="uid://dultr1s5yvyx4"]
 
 [ext_resource type="Texture2D" uid="uid://brl8l3mv7ynvk" path="res://backgrounds/fundo menu de entrada.png" id="1_jnknw"]
 [ext_resource type="Script" path="res://scripts/entrada.gd" id="1_r3fna"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c4qnf7xlkwp3k" path="res://backgrounds/componentes/Rectangle 5.png" id="4_e53tk"]
 [ext_resource type="Theme" uid="uid://gd8xl8rbided" path="res://themes/button_theme.tres" id="4_p1rfh"]
 [ext_resource type="Texture2D" uid="uid://ddhrw0rypdj46" path="res://backgrounds/componentes/Inicie sua jornada.png" id="5_ca3mm"]
+[ext_resource type="AudioStream" uid="uid://cdjx50w5fburx" path="res://assets/hypnocrite.wav" id="8_wryto"]
 
 [node name="entrada" type="Control"]
 layout_mode = 3
@@ -93,5 +94,11 @@ offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_ca3mm")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_wryto")
+volume_db = -10.0
+autoplay = true
+playback_type = 1
 
 [connection signal="pressed" from="MarginContainer/blur/iniciar" to="." method="_on_iniciar_pressed"]

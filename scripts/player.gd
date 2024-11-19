@@ -27,5 +27,5 @@ func check_collisions():
 	for i in range(get_slide_collision_count()):
 		var collision := get_slide_collision(i)
 		#print("Colidiu com:", collision.get_collider().name)
-		if collision.get_collider().name == "down" or collision.get_collider().name == "up":
+		if collision.get_collider().name == "down" or collision.get_collider().name == "up" or collision.get_collider().name == "balaco":
 			emit_signal("game_over_signal")

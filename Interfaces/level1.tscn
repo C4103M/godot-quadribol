@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dh6mhbpj88qvi"]
+[gd_scene load_steps=16 format=3 uid="uid://dh6mhbpj88qvi"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_5t4rq"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xm3en"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://ggofcb8vqmev" path="res://assets/harry_p/HARRYP__.TTF" id="7_m0j1b"]
 [ext_resource type="Texture2D" uid="uid://c8fwmkmgh3bdt" path="res://backgrounds/componentes/play.png" id="8_6omjf"]
 [ext_resource type="Texture2D" uid="uid://c7ag1k6di8f6a" path="res://assets/reestart.png" id="9_cgvrk"]
+[ext_resource type="AudioStream" uid="uid://cwqjumvwex1qw" path="res://assets/game-music-teste-1-204326.mp3" id="9_roljs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iynk2"]
 atlas = ExtResource("2_i5sl7")
@@ -96,7 +97,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Fundo1" parent="." instance=ExtResource("2_3q3qw")]
 process_mode = 1
 
-[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+[node name="Player" type="CharacterBody2D" parent="." groups=["player", "playerScene"]]
 texture_filter = 1
 script = ExtResource("1_xm3en")
 
@@ -156,6 +157,10 @@ text = "0"
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5
 
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 13.0
+autostart = true
+
 [node name="Canvas_game_over" type="CanvasLayer" parent="."]
 visible = false
 
@@ -206,6 +211,13 @@ icon = ExtResource("9_cgvrk")
 flat = true
 metadata/_edit_use_anchors_ = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_roljs")
+volume_db = -10.0
+autoplay = true
+playback_type = 1
+
 [connection signal="pressed" from="Canvas_pause/continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
+[connection signal="timeout" from="Timer2" to="." method="balacoGenerator"]
 [connection signal="pressed" from="Canvas_game_over/restart" to="." method="_on_restart_pressed"]

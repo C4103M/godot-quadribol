@@ -17,6 +17,7 @@ var is_paused = false
 @onready var label_score = $score
 @onready var label_score2 = $Canvas_game_over/score
 @onready var timer = $Timer
+@onready var timer2 = $Timer2
 @onready var player = $Player
 @onready var canvas_game_over = $Canvas_game_over
 @onready var btn_restart = $Canvas_game_over/restart
@@ -27,12 +28,13 @@ func _ready():
 	fundo1_sprite.material.set_shader_parameter("offset", accumulated_offset)
 	btn_pause.connect("pressed", Callable(self, "_on_pause_button_pressed"))
 	timer.connect("timeout", Callable(self, "aroGenerator"))
+	timer2.connect("timeout", Callable(self, "balacoGenerator"))
 	player.connect("game_over_signal", Callable(self, "gameover"))
 	btn_restart.connect("pressed", Callable(self, "restart"))
 	fundo_game.z_index = -2
 
 func _input(event):
-	print("Tecla pressionada: ", event)
+	#print("Tecla pressionada: ", event)
 	if (event is InputEventKey or event is InputEventMouseButton or event is InputEventJoypadButton) and event.pressed and cont < 1:
 		start()
 		cont += 1
@@ -82,10 +84,22 @@ func aroGenerator():
 	call_deferred("add_child", aro)
 	aro.z_index = -1
 	timer.start()
-
+func balacoGenerator():
+	var balaco = preload("res://Interfaces/balaco.tscn").instantiate()
+	balaco.position = Vector2(1920, randf_range(50, 900))
+	#balaco.position = Vector2(1920, 900)
+	call_deferred("add_child", balaco)
+	balaco.z_index = -1
+	timer2.start()
+	
 func scoreUp():
 	score += 1
-	cenarySpeed += 0.02
+	if score < 10:
+		cenarySpeed += 0.02
+	else: 
+		cenarySpeed += 0.01
+		
+		
 	label_score.text = str(score)
 	
 func gameover():
